@@ -1,0 +1,375 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: lighter;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 3rem;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+/* Main content styling */
+.main-content {
+    display: flex;
+    align-items: stretch; /* Ensure both sections are the same height */
+    height: calc(100vh - 3em); /* Full height minus navbar */
+    margin-top: 3.7em;
+}
+
+/* Left Section (Text) */
+.left-section {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.left-section h1 {
+    margin-top: 0;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.left-section p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-top: 1em;
+}
+
+/* Social Links Styling */
+.left-section .social-links {
+    margin-top: 2em;
+    list-style: none;
+    padding: 0;
+}
+
+.left-section .social-links li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.left-section .social-links li img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.left-section .social-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.left-section .social-links li a:hover {
+    color: #1DA1F2;
+}
+
+/* Right Section (Image) */
+.right-section {
+    flex: 1;
+    display: flex;
+    padding-bottom: 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.right-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0em;
+}
+
+/* Skills Page Specific */
+.skills-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 50px 0;
+    background-color: #d3d3d3;
+}
+
+canvas#skillsChart {
+    width: 70vw;
+    height: 50vh;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.chartjs-legend {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+.certificates-content {
+    padding: 2rem; /* Reduce padding */
+    padding-bottom: 1rem;
+    background-color: #f4f4f9;
+    text-align: center;
+    color: #333;
+}
+
+.certificates-content h1 {
+    font-size: 2.5rem; /* Slightly reduce the font size for a better fit */
+    margin-bottom: 0.5rem;
+}
+
+.certificates-content p {
+    padding-bottom: 0px;
+    margin-bottom: 0.5rem; /* Add a bit of spacing */
+    font-size: 1.1rem; /* Slightly smaller font size */
+}
+
+.certificates-grid {
+    margin-top: 1rem; /* Reduce the margin to bring the grid closer to the text */
+    display: grid;
+    grid-template-columns:  repeat(3, 1fr);
+    gap: 2rem; /* Reduce the gap between certificates */
+    justify-items: center;
+    align-items:start;
+    padding: 1rem;
+
+    /* Fix scrolling and visibility */
+    max-height: 70vh; /* Limit height dynamically to viewport height */
+    overflow-y: auto;
+    
+    scrollbar-width: thin;
+    scrollbar-color: #00bcd4 #f0f0f0;
+}
+
+
+/* Scrollbar styling for Webkit browsers */
+.certificates-grid::-webkit-scrollbar {
+    width: 8px;
+}
+
+.certificates-grid::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+.certificates-grid::-webkit-scrollbar-thumb {
+    background-color: #00bcd4;
+    border-radius: 4px;
+    border: 2px solid #f0f0f0;
+}
+
+.certificate-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%; /* Ensure cards take up the available space */
+    max-width: 300px; /* Limit maximum width */
+    
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.certificate-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.certificate-card p {
+    font-size: 1rem;
+    margin: 1rem 0;
+    color: #555;
+}
+
+/* Experience Page Scrollable Section */
+.experience-content {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 500px; /* Set a fixed height for the section */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-top: 80px; /* Adjust based on navbar height */
+    scrollbar-width: thin; /* Optional: Custom scrollbar width for Firefox */
+    scrollbar-color: #00bcd4 #f0f0f0; /* Optional: Custom scrollbar colors for Firefox */
+}
+
+/* Scrollbar Styling for Webkit Browsers */
+.experience-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.experience-content::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Scrollbar track color */
+}
+
+.experience-content::-webkit-scrollbar-thumb {
+    background-color: #00bcd4; /* Scrollbar thumb color */
+    border-radius: 4px; /* Rounded edges for the scrollbar */
+    border: 2px solid #f0f0f0; /* Optional: Adds padding around the thumb */
+}
+nav {
+    position: fixed; /* Ensure the navbar stays at the top */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's above other elements */
+    background-color: #333; /* Or your navbar background color */
+}
+
+/* Contact Container */
+.contact-container {
+    max-width: 600px; /* Reduce the max width */
+    margin: 30px auto; /* Reduce margin */
+    background-color: #fff;
+    padding: 15px 20px; /* Reduce padding */
+    border-radius: 10px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container h1 {
+    font-size: 1.8rem; /* Reduce font size */
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact-container p {
+    text-align: center;
+    margin-bottom: 20px; 
+    font-size: 0.9rem; 
+    color: #555;
+}
+
+/* Form Styling */
+.contact-form .form-group {
+    margin-bottom: 15px; 
+}
+
+.contact-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 8px; 
+    font-size: 0.9rem; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #1e90ff;
+}
+
+.contact-form button {
+    display: block;
+    width: 100%;
+    padding: 8px; 
+    font-size: 0.9rem; 
+    font-weight: bold;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #155a9f;
+}
+
+/* Social Links */
+.social-links {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+.social-links h3 {
+    font-size: 1rem; 
+    margin-bottom: 15px; 
+    color: #333;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #1e90ff;
+    font-size: 0.9rem; 
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #155a9f;
+}
+
+.social-links img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px; 
+}
